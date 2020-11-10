@@ -1,3 +1,5 @@
+/*@import '../assets/styles/_global';*/
+
 // ---------- colors ----------
 
 $colorMain: #ffffff;
@@ -112,11 +114,20 @@ $drag: 2s;
 
 // ---------- views ----------
 
-.page-container {
+.flex {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - $navHeight);
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.full {
+    height: calc(100vh - #{$navHeight} - 1px);
     width: 100%;
     padding: 0px;
     margin: 0px;

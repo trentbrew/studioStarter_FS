@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="flex full">
     <div class="logo graphic"></div>
   </div>
 </template>
@@ -18,6 +18,8 @@ export default {
 
 .logo {
   background-image: url('../assets/sample-logo-black.png');
+  height: 200px;
+  width: 500px;
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <Navbar/>
+  <Navbar :titles="['Home','Library']" :paths="['/','/library']" />
   <router-view/>
 </template>
 

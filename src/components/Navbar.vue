@@ -1,8 +1,9 @@
 <template>
 <div id="nav">
     <ul>
-        <router-link to="/"><li class="nav-item">Home</li></router-link>
-        <router-link to="/library"><li class="nav-item">Library</li></router-link>
+        <router-link v-for="(i, index) in paths" :key="index" :to="i">
+            <li class="nav-item">{{ titles[index] }}</li>
+        </router-link>
     </ul>
 </div>
 </template>
@@ -10,19 +11,16 @@
 <script>
 export default {
     name: 'Navbar',
-    data() {
-        return {
-
-        }
+    props: {
+        paths: Array,
+        titles: Array
     },
     created() {
-
+        console.log('navbar created');
     },
     mounted() {
-
-    },
-
-
+        console.log('navbar mounted');
+    }
 }
 </script>
 
@@ -31,13 +29,15 @@ export default {
 
 #nav {
     background: $colorMain;
-    box-shadow: $shadow;
+    //box-shadow: $shadow;
     height: $navHeight;
     width: 100%;
     justify-content: center;
     align-items: center;
     line-height: $navHeight;
     text-align: center;
+    z-index: 6;
+    border-bottom: 1px solid $colorLightGray;
 
     ul {
         text-decoration: none;
@@ -71,6 +71,10 @@ export default {
 
     a.router-link-exact-active {
         font-weight: bold;
+        
+        li {
+            border-bottom: 1px solid black;
+        }
     }
 }
 
